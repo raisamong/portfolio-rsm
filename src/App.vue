@@ -17,16 +17,24 @@ body {
   color: #fff;
 }
 
+* {
+  margin-top: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #42b983; //#2c3e50;
+  color: #ffce00; //#00FFCE #CE00FF
   height: 100%;
   margin: auto;
   .second-text {
-    color: #2c3e50;
+    color: #356493;
+  }
+  .white-text {
+    color: #fff;
   }
 }
 

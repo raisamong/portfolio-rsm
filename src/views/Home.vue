@@ -1,10 +1,10 @@
 <template>
   <div class="home flex-center">
-    <div class="profile-image box-shadow">
-      <div class="image"></div>
-    </div>
     <div class="detail">
       <HelloWorld name="Thanwat Thangpiboonvech" job="Development Specialist" />
+    </div>
+    <div class="profile-image box-shadow">
+      <div class="image"></div>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default defineComponent({
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
   /* mask-image: -webkit-gradient(
     linear,
     left top,
