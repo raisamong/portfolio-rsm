@@ -1,8 +1,8 @@
 <template>
-  <div id="nav">
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </div>
+  </div> -->
   <router-view />
 </template>
 
@@ -13,7 +13,6 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-size: 32px;
   background-color: #000;
   color: #fff;
 }
@@ -23,7 +22,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #42b983; //#2c3e50;
+  height: 100%;
+  margin: auto;
+  .second-text {
+    color: #2c3e50;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.box-shadow {
+  box-shadow: 0px 0px 20px 0px rgba(66, 185, 131, 0.3);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(66, 185, 131, 0.3);
+  -moz-box-shadow: 0px 1px 20px 0px rgba(66, 185, 131, 0.3);
 }
 
 #nav {

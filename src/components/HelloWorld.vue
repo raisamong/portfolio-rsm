@@ -1,6 +1,9 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="container flex-center">
+    <div class="typewriter">
+      <h1>{{ name }}</h1>
+      <h2 class="second-text job">{{ `${job}` }}</h2>
+    </div>
   </div>
 </template>
 
@@ -10,25 +13,45 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'HelloWorld',
   props: {
-    msg: String,
+    name: String,
+    job: String,
   },
 })
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+.container {
+  flex-direction: row;
+  height: 100%;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.container-image {
+  flex-shrink: 1;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.typewriter {
+  flex: 1;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  /* animation: typing 3s steps(40, end); */
 }
-a {
-  color: #42b983;
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#profile-image {
+  width: 400px;
+  height: 500px;
+  border-radius: 5%;
 }
 </style>
