@@ -100,7 +100,7 @@ body {
 }
 
 .profile-image {
-  background-image: url('/img/fearr.jpeg');
+  background-image: url('/img/fear.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
