@@ -3,7 +3,12 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div> -->
-  <router-view />
+  <div class="app-container flex-center">
+    <router-view />
+    <div class="profile-image box-shadow">
+      <div class="image"></div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
@@ -38,6 +43,14 @@ body {
   }
 }
 
+.app-container {
+  height: 100%;
+  flex-direction: row;
+  > div:first-child {
+    flex-grow: 1;
+  }
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -61,5 +74,28 @@ body {
       color: #42b983;
     }
   }
+}
+
+.profile-image {
+  background-image: url('/img/fear.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
+  /* mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right bottom,
+    color-stop(0, rgba(0, 0, 0, 1)),
+    color-stop(0.35, rgba(0, 0, 0, 1)),
+    color-stop(0.5, rgba(0, 0, 0, 0)),
+    color-stop(0.65, rgba(0, 0, 0, 0)),
+    color-stop(1, rgba(0, 0, 0, 0))
+  ); */
+
+  mask-size: 100%;
+  height: 100%;
+  flex-shrink: 1;
+  width: 600px;
 }
 </style>
