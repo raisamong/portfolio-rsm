@@ -5,27 +5,27 @@
     <div class="skill-container">
       <div class="gradient-bg">
         <div class="block">
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+          <h3 class="white-text padding-sm no-margin space-letter">LANGUAGE</h3>
+          <ul class="skill-list">
+            <li>Javascript</li>
+            <li>Typescript</li>
+            <li>Kotlin</li>
+            <li>CSS3, SCSS</li>
+            <li>HTML5</li>
           </ul>
         </div>
       </div>
       <div class="gradient-bg">
         <div class="block">
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+          <h3 class="white-text padding-sm no-margin space-letter">FRAMEWORK</h3>
+          <ul class="skill-list">
+            <li>React</li>
+            <li>React Native</li>
+            <li>React Testing Library</li>
+            <li>Next.js</li>
+            <li>Node.js</li>
+            <li>Spring Boot</li>
+            <li>Vue</li>
           </ul>
         </div>
       </div>
@@ -69,6 +69,14 @@
     > div {
       border-radius: 1rem;
     }
+  }
+}
+
+.skill-list {
+  margin: 0.25rem 2rem;
+  > li {
+    color: #fff;
+    margin: 0.25rem;
   }
 }
 </style>

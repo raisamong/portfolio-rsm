@@ -60,10 +60,30 @@ body {
   align-content: center;
 }
 
+.margin-sm {
+  margin: 1rem;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.padding-sm {
+  padding: 1rem;
+}
+
+.no-padding {
+  padding: 0;
+}
+
 .box-shadow {
   box-shadow: 0px 0px 20px 0px rgba(66, 185, 131, 0.3);
   -webkit-box-shadow: 0px 0px 20px 0px rgba(66, 185, 131, 0.3);
   -moz-box-shadow: 0px 1px 20px 0px rgba(66, 185, 131, 0.3);
+}
+
+.space-letter {
+  letter-spacing: 5px;
 }
 
 #nav {
@@ -80,7 +100,7 @@ body {
 }
 
 .profile-image {
-  background-image: url('/img/fear.jpeg');
+  background-image: url('/img/fearr.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
