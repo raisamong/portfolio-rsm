@@ -113,4 +113,45 @@ body {
     opacity: 0.4;
   }
 }
+
+//animations
+
+.gradient-bg {
+  padding: 0.2rem;
+  background: linear-gradient(to right, #ffce00 0%, #00ffce 75%, #ce00ff 100%);
+  background-size: 500%;
+  animation-name: gradientOut;
+  animation-duration: 0.5s;
+  &:hover {
+    animation-name: gradient;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  &:focus {
+    outline: none;
+  }
+
+  .block {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+@keyframes gradientOut {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 </style>

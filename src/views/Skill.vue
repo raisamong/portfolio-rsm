@@ -3,8 +3,32 @@
     <h5 class="white-text">MY PROFESSIONS</h5>
     <h1>What I Love to DO, 💛</h1>
     <div class="skill-container">
-      <div></div>
-      <div></div>
+      <div class="gradient-bg">
+        <div class="block">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="gradient-bg">
+        <div class="block">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -29,12 +53,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
-  > div:first-child {
-    background-color: green;
-  }
   > div {
     margin-right: 2rem;
     margin-bottom: 1rem;
+
     flex: 1;
     height: 20vw;
     min-height: 300px;
@@ -42,7 +64,11 @@
     width: 20vw;
     min-width: 200px;
     max-width: 700px;
-    background-color: red;
+
+    border-radius: 1rem;
+    > div {
+      border-radius: 1rem;
+    }
   }
 }
 </style>
