@@ -1,5 +1,7 @@
 <template>
-  <HelloWorld name="Thanwat Thangpiboonvech" job="Development Specialist" />
+  <div class="container">
+    <HelloWorld name="Thanwat Thangpiboonvech" job="Development Specialist" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -14,4 +16,13 @@ export default defineComponent({
 })
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.container {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-70%);
+  font-weight: bold;
+  text-align: start;
+}
+</style>

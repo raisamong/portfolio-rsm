@@ -4,7 +4,9 @@
     <router-link to="/about">About</router-link>
   </div> -->
   <div class="app-container flex-center">
-    <router-view />
+    <div>
+      <router-view />
+    </div>
     <div class="profile-image box-shadow">
       <div class="image"></div>
     </div>
