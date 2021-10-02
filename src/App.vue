@@ -50,6 +50,7 @@ body {
   flex-direction: row;
   > div:first-child {
     flex-grow: 1;
+    z-index: 1;
   }
 }
 
@@ -99,5 +100,17 @@ body {
   height: 100%;
   flex-shrink: 1;
   width: 600px;
+
+  //adjust opacity
+  opacity: 1;
+  @media only screen and (max-width: 1440px) {
+    opacity: 0.8;
+  }
+  @media only screen and (max-width: 1024px) {
+    opacity: 0.6;
+  }
+  @media only screen and (max-width: 515px) {
+    opacity: 0.4;
+  }
 }
 </style>
