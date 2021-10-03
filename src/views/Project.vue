@@ -3,9 +3,13 @@
     <h5 class="white-text">MY LOVELY PROJECTS 💛</h5>
     <h1>What I’ve Worked On</h1>
     <div class="project-container">
-      <div v-for="project in projects" v-bind:key="project.name">
-        <div class="white-text stack">{{ project.stack.join('/') }}</div>
-        <div class="name">{{ project.name }}</div>
+      <div class="white-grad" v-for="project in projects" v-bind:key="project.name">
+        <div class="white-text stack">{{ project.stack.join(' / ') }}</div>
+        <div class="name">
+          <h1 v-for="word in project.name.split(' ')" v-bind:key="word">
+            {{ word }}
+          </h1>
+        </div>
         <div class="additional">Github</div>
       </div>
     </div>
@@ -28,14 +32,14 @@ const projects: Project[] = [
     stack: ['JS', 'Matter.js']
   },
   {
-    name: 'Happy Birthday',
-    github: 'https://github.com/raisamong/happy-birthday-rsm',
-    stack: ['JS', 'Matter.js']
+    name: 'Typing Oxford',
+    github: 'https://github.com/raisamong/typing-oxford-3000-rsm',
+    stack: ['TS', 'React']
   },
   {
-    name: 'Happy Birthday',
-    github: 'https://github.com/raisamong/happy-birthday-rsm',
-    stack: ['JS', 'Matter.js']
+    name: 'Port (this site)',
+    github: 'https://github.com/raisamong/portfolio-rsm',
+    stack: ['TS', 'Vue']
   }
 ]
 
@@ -50,6 +54,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+$gradient-color: linear-gradient(to right, #ffce00 0%, #00ffce 75%, #ce00ff 100%);
+
 .containter {
   position: absolute;
   top: 50%;
@@ -68,8 +74,6 @@ export default defineComponent({
 }
 
 .project-container {
-  background-color: red;
-
   height: 100%;
   width: 100%;
   max-width: 1000px;
@@ -85,31 +89,56 @@ export default defineComponent({
 
   > div {
     padding: 1rem;
-    background-color: rgba(1, 1, 1, 0.3);
 
     display: grid;
-    grid-template-rows: 50px auto 50px;
+    grid-template-rows: 75px auto 35px;
 
     > div {
       padding: 0.5rem;
     }
 
     .stack {
-      background-color: #ffce00; //#00FFCE #CE00FF
+      text-align: end;
+      /* background-color: red; */
     }
     .name {
-      background-color: #00ffce;
+      text-align: start;
+      h1 {
+        margin: 0;
+        align-self: center;
+      }
+      /* background-color: green; */
     }
     .additional {
-      background-color: #ce00ff;
+      /* background-color: blue; */
     }
-    /* margin: 0.25rem 0.5rem; */
-
-    /* width: calc(calc(100% - 3rem) / 3); */
-    /* min-width: 250px; */
-    /* max-width: calc(calc(100% - 3rem) / 3); */
-
-    /* min-height: 350px; */
   }
+
+  .white-grad:nth-of-type(even) {
+    --c: linear-gradient(to left, #ffce00 0%, #00ffce 75%, #ce00ff 100%); /* border width*/
+  }
+
+  .white-grad {
+    position: relative;
+    --b: 0 8px 0 8px;
+    --r: 50% 0;
+    --c: linear-gradient(to right, #ffce00 0%, #00ffce 75%, #ce00ff 100%); /* border width*/
+  }
+
+  .white-grad:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--c, #000);
+    padding: var(--b);
+    border-radius: var(--r, 50%);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  //ref https://stackoverflow.com/questions/51496204/border-gradient-with-border-radius/51496341
 }
 </style>
