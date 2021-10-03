@@ -100,7 +100,7 @@ body {
 }
 
 .profile-image {
-  background-image: url('/img/fear.jpeg');
+  background-image: url('/img/fear-png.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -120,6 +120,7 @@ body {
   height: 100%;
   flex-shrink: 1;
   width: 600px;
+  margin-right: 10%;
 
   //adjust opacity
   opacity: 1;
