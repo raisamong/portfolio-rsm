@@ -2,15 +2,31 @@
   <div class="containter">
     <h5 class="white-text">MY LOVELY PROJECTS 💛</h5>
     <h1>What I’ve Worked On</h1>
+
     <div class="project-container">
-      <div class="white-grad" v-for="project in projects" v-bind:key="project.name">
-        <div class="white-text stack">{{ project.stack.join(' / ') }}</div>
-        <div class="name">
-          <h1 v-for="word in project.name.split(' ')" v-bind:key="word">
-            {{ word }}
+      <div class="white-grad" v-for="(project, index) in projects" v-bind:key="project.name">
+        <div class="stack clickable-not space">
+          <font-awesome-icon
+            v-on:click="goToGithub(project.github)"
+            class="icon clickable"
+            :icon="['fab', 'github']"
+          />
+
+          <font-awesome-icon
+            v-if="project.externalLink"
+            v-on:click="goToGithub(project.github)"
+            class="icon clickable"
+            :icon="['fas', 'external-link-alt']"
+          />
+        </div>
+        <div class="name clickable-not">
+          <h1 class="text-gradient white-space-pre" v-bind:class="{ '-revert': index % 2 !== 0 }">
+            {{ project.name }}
           </h1>
         </div>
-        <div class="additional">Github</div>
+        <div class="additional white-text ">
+          {{ project.stack.join(' / ') }}
+        </div>
       </div>
     </div>
   </div>
@@ -22,22 +38,25 @@ import { defineComponent } from 'vue'
 interface Project {
   name: string
   github: string
+  externalLink?: string
   stack: string[]
 }
 
 const projects: Project[] = [
   {
-    name: 'Happy Birthday',
+    name: 'Happy\nBirthday',
     github: 'https://github.com/raisamong/happy-birthday-rsm',
+    externalLink: 'https://happy-birthday-rsm.vercel.app/',
     stack: ['JS', 'Matter.js']
   },
   {
-    name: 'Typing Oxford',
+    name: 'Typing\nOxford',
     github: 'https://github.com/raisamong/typing-oxford-3000-rsm',
+    externalLink: 'https://typing-oxford-3000-rsm.vercel.app/',
     stack: ['TS', 'React']
   },
   {
-    name: 'Port (this site)',
+    name: 'Portfolio',
     github: 'https://github.com/raisamong/portfolio-rsm',
     stack: ['TS', 'Vue']
   }
@@ -48,6 +67,11 @@ export default defineComponent({
   data() {
     return {
       projects: projects
+    }
+  },
+  methods: {
+    goToGithub: function(url: string) {
+      window.open(url)
     }
   }
 })
@@ -103,6 +127,7 @@ $gradient-color: linear-gradient(to right, #ffce00 0%, #00ffce 75%, #ce00ff 100%
     }
     .name {
       text-align: start;
+      padding: 2rem;
       h1 {
         margin: 0;
         align-self: center;

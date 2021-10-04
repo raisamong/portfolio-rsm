@@ -76,6 +76,46 @@ body {
   padding: 0;
 }
 
+.icon {
+  font-size: 1.5rem;
+  color: #fff;
+
+  &-primary {
+    font-size: 1.5rem;
+    color: #ffce00;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+
+  &-not {
+    cursor: default;
+  }
+}
+
+.space {
+  * {
+    margin: 0 0.5rem;
+  }
+}
+
+.white-space-pre {
+  white-space: pre;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #ffce00 0%, #00ffce 75%, #ce00ff 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  &.-revert {
+    background: linear-gradient(to left, #ffce00 0%, #00ffce 75%, #ce00ff 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 .box-shadow {
   box-shadow: 0px 0px 20px 0px rgba(66, 185, 131, 0.3);
   -webkit-box-shadow: 0px 0px 20px 0px rgba(66, 185, 131, 0.3);
